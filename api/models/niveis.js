@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-    //  Niveis.hasMany(models.Matriculas)
-      Niveis.hasMany(models.Turmas,  {
+      //  Niveis.hasMany(models.Matriculas)
+      Niveis.hasMany(models.Turmas, {
         foreignKey: 'nivel_id'
       })
 
@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Niveis',
+    paranoid: true,
+
   });
   return Niveis;
 };
